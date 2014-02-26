@@ -52,3 +52,18 @@ set softtabstop=2
 "helptags /usr/share/vim/vim73/doc/
 helptags ~/.vim/doc/
 
+
+
+
+
+" From https://coderwall.com/p/if9mda - allows for code paste without a need for invoking :set paste
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
