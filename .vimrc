@@ -24,6 +24,10 @@ set nowrap
 " I'm working on dark background
 set background=dark
 
+" Autocompletion selected element has blue background
+highlight PmenuSel ctermbg=blue
+
+
 " Enable auto indentation
 set autoindent
 
