@@ -20,7 +20,7 @@ set hlsearch
 
 " No line wrapping
 set nowrap
-
+ 
 " I'm working on dark background
 set background=dark
 
