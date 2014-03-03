@@ -24,28 +24,12 @@ let g:solarized_termcolors=256  " Don't know what it does, but it's needed for g
 colorscheme solarized           " And using solarized scheme
 set background=dark
 
-
-
-
-" Enable vimjde (http://www.vim.org/scripts/script.php?script_id=1213 and http://blog.vinceliu.com/2007/08/vim-tips-for-java-3-use-omni-completion.html) plugin for java
-"helptags /usr/share/vim/vim73/doc/
-"helptags ~/.vim/doc/
-
-
-
 " Syntax highlighting
-au BufNewFile,BufRead *.json set filetype=javascript  " JSON files are JavaScript
-au BufNewFile,BufRead Capfile set filetype=ruby       " Capistrano file is Ruby
-au BufNewFile,BufRead Vagrantfile set filetype=ruby   " Vagrant
-au BufNewFile,BufRead *.conf set filetype=apache      " Apache config
-au BufNewFile,BufRead *.jad set filetype=java         " Decompiled Java files
-
-
-" Enable tagbar for some file types
-au BufNewFile,BufRead *.java,*.jad :TagbarToggle              " Java family
-au BufNewFile,BufRead *.rb,Capfile,Vagrantfile :TagbarToggle  " Ruby family
-au BufNewFile,BufRead *.js :TagbarToggle                      " JavaScript family
-
+autocmd BufNewFile,BufRead *.json set filetype=javascript  " JSON files are JavaScript
+autocmd BufNewFile,BufRead Capfile set filetype=ruby       " Capistrano file is Ruby
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby   " Vagrant
+autocmd BufNewFile,BufRead *.conf set filetype=apache      " Apache config
+autocmd BufNewFile,BufRead *.jad set filetype=java         " Decompiled Java files
 
 " Allows for code paste without messing up indentation (without a need for invoking :set paste)
 " from https://coderwall.com/p/if9mda
@@ -71,3 +55,28 @@ map <F8> <F1>8gt
 map <F9> <F1>9gt
 map <F10> <F1>10gt
 map <F12> :tablast<CR>
+
+
+"""""""""""""""" PLUGINS CONFIG """"""""""""""""
+
+
+" vimjde
+" Enable vimjde (http://www.vim.org/scripts/script.php?script_id=1213 and http://blog.vinceliu.com/2007/08/vim-tips-for-java-3-use-omni-completion.html) plugin for java
+"helptags /usr/share/vim/vim73/doc/
+"helptags ~/.vim/doc/
+
+
+" vim-rooter plugin
+let g:rooter_patterns = ['pom.xml', '.git/']  " search for these files as project roots
+autocmd VimEnter * :Rooter               " when editing these files search for the containing project
+
+
+" NERDTree 
+autocmd VimEnter * :NERDTree
+autocmd BufNew * wincmd p                                 " ...and make content window active
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " close NERDTree if it's the last buffer remaining
+
+" Tagbar
+autocmd FileType java,ruby,javascript :TagbarToggle              
+
+
