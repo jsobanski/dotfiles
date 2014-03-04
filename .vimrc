@@ -21,8 +21,8 @@ set nowrap
  
 " Colors
 let g:solarized_termcolors=256  " Don't know what it does, but it's needed for good colors
-colorscheme solarized           " And using solarized scheme
 set background=dark
+colorscheme molokai           " And using solarized scheme
 
 " Syntax highlighting
 autocmd BufNewFile,BufRead *.json set filetype=javascript  " JSON files are JavaScript
