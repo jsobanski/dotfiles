@@ -53,8 +53,15 @@ map <F6> <F1>6gt
 map <F7> <F1>7gt
 map <F8> <F1>8gt
 map <F9> <F1>9gt
-map <F10> <F1>10gt
-map <F12> :tablast<CR>
+
+
+
+" Doing IDE
+" F10 enters 'project mode'
+map <F10> :Rooter<CR>:NERDTree<CR>
+set mouse=a                         " Enable mouse
+
+
 
 
 """""""""""""""" PLUGINS CONFIG """"""""""""""""
@@ -68,15 +75,16 @@ map <F12> :tablast<CR>
 
 " vim-rooter plugin
 let g:rooter_patterns = ['pom.xml', '.git/']  " search for these files as project roots
-autocmd VimEnter * :Rooter               " when editing these files search for the containing project
 
 
 " NERDTree 
-autocmd VimEnter * :NERDTree
-autocmd BufNew * wincmd p                                 " ...and make content window active
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " close NERDTree if it's the last buffer remaining
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " close NERDTree if it's the last buffer remaining
+autocmd BufNewFile,BufRead * :NERDTreeMirror    " when multiple tabs, then each new tab should mirror NERDTree
+let NERDTreeMinimalUI = 1                       " Don't display help at the top
+
 
 " Tagbar
-autocmd FileType java,ruby,javascript :TagbarToggle              
+autocmd FileType java,ruby,javascript :TagbarOpen " Always open for these files
+let g:tagbar_compact = 1                          " Don't display help at the top
 
 
