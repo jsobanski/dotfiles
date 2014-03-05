@@ -58,7 +58,8 @@ map <F9> <F1>9gt
 
 " Doing IDE
 " F10 enters 'project mode'
-map <F10> :Rooter<CR>:NERDTree<CR>
+map <F10> :Rooter<CR>:NERDTree<CR> 
+"/src<CR>o /main<CR>o  /java<CR>O
 set mouse=a                         " Enable mouse
 
 
@@ -81,10 +82,12 @@ let g:rooter_patterns = ['pom.xml', '.git/']  " search for these files as projec
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif  " close NERDTree if it's the last buffer remaining
 autocmd BufNewFile,BufRead * :NERDTreeMirror    " when multiple tabs, then each new tab should mirror NERDTree
 let NERDTreeMinimalUI = 1                       " Don't display help at the top
+let g:NERDTreeWinSize = 50 
 
 
 " Tagbar
 autocmd FileType java,ruby,javascript :TagbarOpen " Always open for these files
 let g:tagbar_compact = 1                          " Don't display help at the top
+let Tlist_Use_SingleClick = 1
 
 
