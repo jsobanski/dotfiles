@@ -18,6 +18,9 @@ set softtabstop=2
 
 " No line wrapping
 set nowrap
+
+" minimum lines to keep above and below cursor
+set scrolloff=3
  
 " Colors
 let g:solarized_termcolors=256  " Don't know what it does, but it's needed for good colors
@@ -91,3 +94,6 @@ let g:tagbar_compact = 1                          " Don't display help at the to
 let Tlist_Use_SingleClick = 1
 
 
+" javacomplete
+setlocal omnifunc=javacomplete#Complete       " Set autocomplete function
+set completeopt=menu,preview,longest          " initial completion value is nothin/current

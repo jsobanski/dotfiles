@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/colorscheme-molokai"]
 	path = .vim/bundle/colorscheme-molokai
 	url = https://github.com/tomasr/molokai
+[submodule ".vim/bundle/javacomplete"]
+	path = .vim/bundle/javacomplete
+	url = https://github.com/vim-scripts/javacomplete.git
