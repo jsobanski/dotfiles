@@ -28,11 +28,14 @@ set background=dark
 colorscheme molokai           " And using solarized scheme
 
 " Syntax highlighting
-autocmd BufNewFile,BufRead *.json set filetype=javascript  " JSON files are JavaScript
 autocmd BufNewFile,BufRead Capfile set filetype=ruby       " Capistrano file is Ruby
 autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby   " Vagrant
 autocmd BufNewFile,BufRead *.conf set filetype=apache      " Apache config
 autocmd BufNewFile,BufRead *.jad set filetype=java         " Decompiled Java files
+
+" Folding
+autocmd filetype json setlocal foldmethod=syntax  
+autocmd filetype json setlocal foldlevel=2       
 
 " Allows for code paste without messing up indentation (without a need for invoking :set paste)
 " from https://coderwall.com/p/if9mda
@@ -63,7 +66,7 @@ map <F9> <F1>9gt
 " F10 enters 'project mode'
 map <F10> :Rooter<CR>:NERDTree<CR> 
 "/src<CR>o /main<CR>o  /java<CR>O
-set mouse=a                         " Enable mouse
+"set mouse=a                         " Enable mouse
 
 
 
