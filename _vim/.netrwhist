@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/jsobanska'
+let g:netrw_dirhist_2='/Volumes/home/Arbeit/github/LibertyGlobal/Kraken-SDK/src'
+let g:netrw_dirhist_3='/Volumes/home/Arbeit/github/LibertyGlobal/infrastructure/provisioning/cookbooks/schedule-api'
+let g:netrw_dirhist_4='/Volumes/home/Arbeit/github/LibertyGlobal/infrastructure/provisioning/nodes'

@@ -1,0 +1,6 @@
+Host *+*
+ProxyCommand ssh $(echo %h | awk -F"+" '{print $1}') nc $(echo %h | awk -F"+" '{print $2}') %p
+StrictHostKeyChecking no
+VerifyHostKeyDNS no
+UserKnownHostsFile=/dev/null
+
